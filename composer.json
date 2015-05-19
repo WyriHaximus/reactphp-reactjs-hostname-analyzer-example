@@ -1,0 +1,22 @@
+{
+  "require": {
+    "react/dns": "^0.4.1",
+    "wyrihaximus/react-guzzle-ring": "^1.0",
+    "react/http": "^0.4.0",
+    "react/filesystem": "dev-master",
+    "league/event": "^2.1",
+    "clue/sse-react": "dev-master",
+    "mkraemer/react-inotify": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "WyriHaximus\\React\\Examples\\HostnameAnalyzer\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/WyriHaximus/react-inotify"
+    }
+  ]
+}
