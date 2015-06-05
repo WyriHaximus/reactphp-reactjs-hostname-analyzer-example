@@ -1,0 +1,11 @@
+{
+  "name": "reactphp-reactjs-hostname-analyzer-example",
+  "version": "0.0.0",
+  "authors": [
+    "Cees-Jan Kiewiet <ceesjank@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "unsemantic": "~1.0.2"
+  }
+}

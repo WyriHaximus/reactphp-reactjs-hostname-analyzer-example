@@ -8,41 +8,6 @@
         <link rel="stylesheet" type="text/css" href="app.css"/>
     </head>
     <body id="react-root">
-    <div className="grid-container">
-        <input name="hostname" id="hostname" onKeyUp="javascript:keyUp();"/>
-        <div>
-            <div className="grid-50">
-                <h1>IP</h1>
-                <h2 id="dns"></h2>
-            </div>
-            <div className="grid-50">
-                <h1>Title</h1>
-                <h2 id="title"></h2>
-            </div>
-        </div>
-        <div>
-            <div className="grid-100">
-                <h1>Location</h1>
-                <h2 id="geo"></h2>
-            </div>
-        </div>
-    </div>
-    <script>
-        var es = new EventSource('sse');
-        es.addEventListener('message', function (event) {
-            document.getElementById([JSON.parse(event.data).type]).innerHTML = JSON.parse(event.data).payload;
-        });
-        function keyUp() {
-            var request = new XMLHttpRequest();
-            request.onreadystatechange = function () {
-                var DONE = this.DONE || 4;
-                if (this.readyState === DONE){
-                }
-            };
-            request.open('GET', '/lookup.json?host=' + document.getElementById('hostname').value, true);
-            request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            request.send(null);
-        }
-    </script>
+        <script src="app.js"></script>
     </body>
 </html>
