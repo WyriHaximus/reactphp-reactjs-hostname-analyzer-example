@@ -6,7 +6,7 @@
     "react/filesystem": "dev-master",
     "league/event": "^2.1",
     "clue/sse-react": "dev-master",
-    "mkraemer/react-inotify": "~1.1"
+    "mkraemer/react-inotify": "^1.1"
   },
   "autoload": {
     "psr-4": {

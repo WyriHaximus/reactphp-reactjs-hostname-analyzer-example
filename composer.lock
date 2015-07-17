@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0e9b2899adc6b295619765491be4853c",
+    "hash": "832fd9356cd4204b04ece129054f57df",
     "packages": [
         {
             "name": "clue/sse-react",
