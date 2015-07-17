@@ -43,6 +43,7 @@ class ResponseHandler
     }
 
     public function __invoke(Request $request, Response $response) {
+        echo $request->getPath(), PHP_EOL;
         if ($request->getPath() == self::SSE_PATH) {
             $this->handleSse($request, $response);
             return;
@@ -94,7 +95,7 @@ class ResponseHandler
     protected function handleSse(Request $request, Response $response)
     {
         $headers = $request->getHeaders();
-        $id = isset($headers['Last-Event-ID']) ? $headers['Last-Event-ID'] : null;
+        $id = null;isset($headers['Last-Event-ID']) ? $headers['Last-Event-ID'] : null;
 
         $response->writeHead(200, array('Content-Type' => 'text/event-stream'));
         $this->channel->connect($response, $id);

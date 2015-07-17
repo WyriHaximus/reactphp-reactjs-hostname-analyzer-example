@@ -32,6 +32,7 @@ class GeoListener implements ListenerProviderInterface
     public function provideListeners(ListenerAcceptorInterface $acceptor)
     {
         $acceptor->addListener('ip', function ($event, $ip) {
+            echo 'Lookingup GeoIP for : ', $ip, PHP_EOL;
             $this->client->get('https://freegeoip.net/json/' . $ip, [
                 'future' => true,
             ])->then(function (Response $response) {
@@ -39,6 +40,7 @@ class GeoListener implements ListenerProviderInterface
                     'type' => 'geo',
                     'payload' => $response->json()['region_name'],
                 ]);
+                echo 'Found location: ', $response->json()['region_name'], PHP_EOL;
             });
         });
     }

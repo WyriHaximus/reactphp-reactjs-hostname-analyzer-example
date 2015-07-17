@@ -28,12 +28,14 @@ class DnsListener implements ListenerProviderInterface
     public function provideListeners(ListenerAcceptorInterface $acceptor)
     {
         $acceptor->addListener('lookup', function ($event, $hostname) {
+            echo 'Looking up ip for: ', $hostname, PHP_EOL;
             $this->resolver->resolve($hostname)->then(function ($ip) {
                 $this->emitter->emit('ip', $ip);
                 $this->emitter->emit('sse', [
                     'type' => 'dns',
                     'payload' => $ip,
                 ]);
+                echo 'Found ip: ', $ip, PHP_EOL;
             });
         });
     }

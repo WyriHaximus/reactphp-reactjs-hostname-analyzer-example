@@ -41,8 +41,10 @@ class TitleListener implements ListenerProviderInterface
                         'type' => 'title',
                         'payload' => $title,
                     ]);
+                    echo 'Found title: ', $title, PHP_EOL;
                 }
             });
+            echo 'Looking up title for: ', $hostname, PHP_EOL;
         });
     }
 }
